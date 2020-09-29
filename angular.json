@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SPACHIDO": {
+    "SPA": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/SPACHIDO",
+            "outputPath": "dist/SPA",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,9 +24,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -62,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "SPACHIDO:build"
+            "browserTarget": "SPA:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "SPACHIDO:build:production"
+              "browserTarget": "SPA:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SPACHIDO:build"
+            "browserTarget": "SPA:build"
           }
         },
         "test": {
@@ -110,15 +115,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "SPACHIDO:serve"
+            "devServerTarget": "SPA:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "SPACHIDO:serve:production"
+              "devServerTarget": "SPA:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "SPACHIDO"
+    }
+  },
+  "defaultProject": "SPA",
+  "cli": {
+    "analytics": "0536824c-200a-4d58-bf7e-cd7d21f90b30"
+  }
 }
